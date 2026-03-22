@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demo CAS{% endblock %}
+
+{% block body %}
+    <main style="max-width: 800px; margin: 2rem auto; font-family: sans-serif;">
+        <h1>Demo CAS Symfony</h1>
+
+        {% if app.user %}
+            <p>Connecté en tant que <strong>{{ app.user.userIdentifier }}</strong>.</p>
+            <p><a href="{{ path('private') }}">Accéder à la page protégée</a></p>
+            <p><a href="{{ path('app_logout') }}">Se déconnecter</a></p>
+        {% else %}
+            <p>Vous n'êtes pas connecté.</p>
+            <p><a href="{{ path('private') }}">Aller sur la page protégée (déclenche CAS)</a></p>
+        {% endif %}
+
+        <hr>
+        <p>Cette page est publique.</p>
+    </main>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Protégé{% endblock %}
+
+{% block body %}
+    <main style="max-width: 900px; margin: 2rem auto; font-family: sans-serif;">
+        <h1>Espace protégé</h1>
+
+        <p>Vous êtes authentifié via CAS.</p>
+
+        <p>Identifiant: <strong>{{ app.user.userIdentifier }}</strong></p>
+
+        {% set attrs = app.user.attributes ?? {} %}
+        <h2>Attributs CAS</h2>
+        {% if attrs is empty %}
+            <p>Aucun attribut transmis.</p>
+        {% else %}
+            <pre>{{ attrs|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+        {% endif %}
+
+        <p><a href="{{ path('home') }}">Retour à l'accueil</a></p>
+        <p><a href="{{ path('app_logout') }}">Se déconnecter</a></p>
+    </main>
+{% endblock %}

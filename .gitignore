@@ -1,0 +1,19 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/config/reference.php
+###< symfony/framework-bundle ###
+
+# IDE / OS
+/.idea/
+.DS_Store
+
+# QA artifacts
+/.phpunit.result.cache
+/coverage/

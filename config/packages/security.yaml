@@ -1,0 +1,23 @@
+security:
+    providers:
+        user_provider:
+            id: App\Security\UserProvider
+
+    firewalls:
+        dev:
+            # Ensure dev tools and static assets are always allowed
+            pattern: ^/(_profiler|_wdt|assets|build)/
+            security: false
+        main:
+            lazy: true
+            provider: user_provider
+            custom_authenticators:
+                - App\Security\CasAuthenticator
+            entry_point: App\Security\CasAuthenticator
+            logout:
+                path: app_logout
+                target: home
+
+    # Note: Only the *first* matching rule is applied
+    access_control:
+        - { path: ^/private, roles: ROLE_USER }

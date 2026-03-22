@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+# Keep generated lock files as text for readable diffs
+composer.lock text
+symfony.lock text
