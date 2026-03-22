@@ -1,4 +1,6 @@
 {
+    "name": "eblindauer/demo-auth-cas-symfony",
+    "description": "Minimal Symfony application demonstrating CAS authentication and logout integration.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
