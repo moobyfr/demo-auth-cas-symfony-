@@ -11,7 +11,7 @@ install:
 	composer install
 
 run:
-	php -S 127.0.0.1:8000 -t public
+	symfony server:start
 
 lint:
 	php -l src/Security/CasAuthenticator.php
