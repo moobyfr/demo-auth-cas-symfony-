@@ -1,6 +1,6 @@
 # Demo Symfony + CAS (minimal)
 
-Cette application montre un flux CAS 2.0 minimal dans Symfony, avec login et logout CAS.
+Cette application montre un flux CAS 2.0 minimal dans Symfony, avec login et logout CAS. L'application *doit* etre servie en https
 
 ## Prerequis
 
@@ -32,13 +32,13 @@ make run
 Ou sans `make`:
 
 ```bash
-php -S 127.0.0.1:8000 -t public
+symfony server:start
 ```
 
 Pages utiles:
-- `http://127.0.0.1:8000/` (publique)
-- `http://127.0.0.1:8000/private` (protegee, declenche CAS)
-- `http://127.0.0.1:8000/logout` (logout local + CAS)
+- `https://127.0.0.1:8000/` (publique)
+- `https://127.0.0.1:8000/private` (protegee, declenche CAS)
+- `https://127.0.0.1:8000/logout` (logout local + CAS)
 
 ## Verifications
 
